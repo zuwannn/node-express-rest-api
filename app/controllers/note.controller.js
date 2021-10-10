@@ -99,7 +99,7 @@ exports.update = (req, res) => {
 // delete a note with the specified noteId in the request
 exports.delete = (req, res) => {
     Note.findByIdAndRemove(req.params.noteId)
-    .then(node => {
+    .then(note => {
         if(!note){
             return res.status(404).send({
                 message: "Note not found with id " + req.params.noteId
