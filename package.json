@@ -1,0 +1,23 @@
+{
+  "name": "express-rest-api",
+  "version": "1.0.0",
+  "description": "[Node.js Express MongoDB Restful CRUD API](https://www.callicoder.com/node-js-express-mongodb-restful-crud-api-tutorial/)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zuwannn/node-express-rest-api.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zuwannn/node-express-rest-api/issues"
+  },
+  "homepage": "https://github.com/zuwannn/node-express-rest-api#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^6.0.10"
+  }
+}
