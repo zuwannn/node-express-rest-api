@@ -1,10 +1,18 @@
 const express = require('express');
-// configuring the database
-const dbconfig = require('./config/database.config')
-const mongoose = require('mongoose')
 
 // create express app
 const app = express()
+
+// parse requests of content-type - application/x-wwww-form-urlencoded
+app.use(express.urlencoded({ extended: true }))
+
+// parse requests of content-type - application/json
+app.use(express.json())
+
+
+// configuring the database
+const dbconfig = require('./config/database.config')
+const mongoose = require('mongoose')
 
 mongoose.Promise = global.Promise
 
@@ -18,16 +26,12 @@ mongoose.connect(dbconfig.url, {
     process.exit();
 })
 
-// parse requests of content-type - application/x-wwww-form-urlencoded
-app.use(express.urlencoded({ extended: true }))
-
-// parse requests of content-type - application/json
-app.use(express.json())
-
 // define a simple route
 app.get('/', (req, res) => {
     res.json({ "message": "Welcome to EasyNote application" })
 })
+
+require('./app/routes/note.routes')(app)
 
 //  listen for requests 
 app.listen(3000, () => {
