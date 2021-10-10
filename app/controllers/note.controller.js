@@ -83,7 +83,7 @@ exports.update = (req, res) => {
                 message: "Note not found with id " + req.params.noteId
             })
         }
-        res.send(node)
+        res.send(note)
     }).catch(err => {
         if(err.kind === 'ObjectId'){
             return res.status(404).send({
